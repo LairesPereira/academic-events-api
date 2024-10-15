@@ -1,10 +1,34 @@
 package com.academicevents.api.models;
 
-public class User {
-    String name;
+import com.academicevents.api.enums.ROLES;
 
-    public User(String name) {
+public class User {
+    public String name;
+    public String email;
+    public String password;
+    public String cpf;
+    public String rua;
+    public String numero;
+    public String bairro;
+    public String cidade;
+    public String estado;
+    public ROLES role;
+
+    public User(String name, String email, String password, String cpf, String rua, String numero, String bairro, String cidade, String estado, ROLES role) {
         this.name = name;
+        this.email = email;
+        this.password = password;
+        this.cpf = cpf;
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.role = role;
+    }
+
+    public User() {
+
     }
 
     public String getName() {
@@ -15,10 +39,91 @@ public class User {
         this.name = name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public ROLES getRole() {
+        return role;
+    }
+
+    public void setRole(ROLES role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
-        return "user{" +
+        return "User{" +
                 "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", rua='" + rua + '\'' +
+                ", numero='" + numero + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

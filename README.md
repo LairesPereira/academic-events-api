@@ -1,6 +1,6 @@
 # Projeto III Semana Acadêmica de Ciência da Computação (Faculdade Católica da Paraíba)
 
-Projeto sento feito por um time de estudantes da Faculdade Catolica da Paraíba, onde ele servirá para um Projeto de um Evento do Curso de Ciência da Computação que durará uma semana, do dia 04/11 à 08/11. Onde nele ocorrerá um Mesa redonda com Especialistas dá área, 
+Projeto sendo feito por um time de estudantes da Faculdade Catolica da Paraíba, onde ele servirá para um Projeto de um Evento do Curso de Ciência da Computação que durará uma semana, do dia 04/11 a 08/11. Onde nele ocorrerá uma mesa redonda com Especialistas dá área, 
 também irá contar com minicursos. Esse projeto será uma API que contará com Página WEB, Backend, Banco de Dados Relacional, entre outras tecnologias. Contaremos com algumas etapas que irá ser citadas e implementadas de acordo com o tempo.
 
 ## Etapas
@@ -11,7 +11,7 @@ também irá contar com minicursos. Esse projeto será uma API que contará com 
 
   **O evento deve contar com administradores para gerenciá-lo, assim tendo acesso a todas as funcionalidades do site, o administrador poderá adicionar, editar e excluir minicursos. O evento também deve contar com Professores, que irão ministrar os minicursos, onde um ou mais professores poderão ministrar um minicurso para vários participantes.**
   
-  **Cada minicurso terá duração de quatro dias, onde cada participante irá receber um certificado de conclusão ao final do minicurso. Cada minicurso vai contar com atividades que serão deferidas pelos professores que irão ministrar o minicurso. Cada minicurso também irá contar com uma lista de presença, onde será feito o check-in/credenciamento de cada participante.**
+  **Cada minicurso terá duração de quatro dias, e cada participante irá receber um certificado de conclusão ao final do minicurso. Cada minicurso vai contar com atividades que serão deferidas pelos professores que irão ministrar o minicurso. Cada minicurso também irá contar com uma lista de presença, onde será feito o check-in/credenciamento de cada participante.**
   
   **Também contaremos com os participantes do evento, que poderão se inscrever no evento e em suas atividades, além de participar da palestra de abertura, que será apresentada por diversos palestrantes. Cada participante poderá se inscrever em apenas um minicurso, pois os minicursos ocorrerão no mesmo horário. Cada participante também deverá confirmar sua inscrição no evento, sua confirmação será recebida por um administrador.**
   
@@ -69,16 +69,16 @@ também irá contar com minicursos. Esse projeto será uma API que contará com 
   - Administrador(CPF, Nome, Rua, Número, Bairro, Cidade,  Estado);
   - TelefoneAdministrador(CPF_Administrador, telefone);
   - EmailAdministrador(CPF_Administrador, email);
-  - Evento(Código, Código_Lista-Presença, Data_Inínio, Data_Término, Instituição, Rua,                Número, Bairro, Cidade, Estado);
-  - Mini-curso(Código, Código_Lista-Presença, Título, Descrição, Data_Início, Data_Fim, Status, Quantidade_Participantes);
-  - Administra(CPF_Administrador, Código_Evento, Código_Mini-curso);
-  - Ministra_MC_Prof(Código_Mini-curso, CPF_Professor);
-  - Professor(CPF, Nome, E-mail, Rua, Número, Bairro, Cidade, Estado);
+  - Evento(Código, Código_Lista_Presença, Data_Inínio, Data_Término, Instituição, Rua,                Número, Bairro, Cidade, Estado);
+  - Mini_curso(Código, Código_Lista_Presença, Título, Descrição, Data_Início, Data_Fim, Status, Quantidade_Participantes);
+  - Administra(CPF_Administrador, Código_Evento, Código_Mini_curso);
+  - Ministra_MC_Prof(Código_Mini_curso, CPF_Professor);
+  - Professor(CPF, Nome, Email, Rua, Número, Bairro, Cidade, Estado);
   - TelefoneProfessor(CPF_Professor, telefone);
-  - Participante(CPF, Código_Lista-Presença, Nome, telefone, Email, Rua, Número, Bairro, Cidade, Estado);
-  - Lista-Presença(Código).
-  - Participa(Código_Evento, CPF_Participante, Código_Mini-curso)
-  - Certificado(Número, Código_Mini-Curso, CPF_Participante, Nome, Carga-Horária)
+  - Participante(CPF, Código_Lista_Presença, Nome, telefone, Email, Rua, Número, Bairro, Cidade, Estado);
+  - Lista_Presença(Código).
+  - Participa(Código_Evento, CPF_Participante, Código_Mini_curso)
+  - Certificado(Número, Código_Mini_Curso, CPF_Participante, Nome, Carga_Horária)
 
 Documento contendo o levantamento de requisitos: [Levantamento de requisitos](https://docs.google.com/document/d/1Z4unOrwe4_CRkiPxMaOxHOgyZ-3G50BNHkAdOwTEQYM/edit?usp=sharing)
 

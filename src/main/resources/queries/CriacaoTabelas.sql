@@ -1,8 +1,8 @@
-CREATE TABLE Administrador (
-	CPF INT,
+CREATE TABLE Administrador(
+	CPF VARCHAR(11),
 	Nome VARCHAR(100),
 	Rua VARCHAR(100),
-	Numero INT,
+	Numero VARCHAR(20),
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
@@ -11,27 +11,27 @@ CREATE TABLE Administrador (
 );
 
 CREATE TABLE TelefoneAdmin(
-	CPF_Admin INT,
-	Telefone INT,
+	CPF_Admin VARCHAR(11),
+	Telefone VARCHAR(20),
 	PRIMARY KEY(CPF_Admin, Telefone),
 	FOREIGN KEY(CPF_Admin) REFERENCES Administrador(CPF)
 );
 
 CREATE TABLE EmailAdmin(
-	CPF_Admin INT,
+	CPF_Admin VARCHAR(11),
 	Email VARCHAR(100),
 	PRIMARY KEY(CPF_Admin, Email),
 	FOREIGN KEY(CPF_Admin) REFERENCES Administrador(CPF)
 );
 
 CREATE TABLE Evento(
-	Codigo INT,
-	Codigo_ListaPresenca INT,
+	Codigo VARCHAR(10),
+	Codigo_ListaPresenca VARCHAR(10),
 	DataInicio DATE,
 	DataFim DATE,
 	Instituicao VARCHAR(100),
 	Rua VARCHAR(100),
-	Numero INT,
+	Numero VARCHAR(20),
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
@@ -40,8 +40,8 @@ CREATE TABLE Evento(
 );
 
 CREATE TABLE MiniCurso(
-	Codigo INT,
-	Codigo_ListaPresenca INT,
+	Codigo VARCHAR(10),
+	Codigo_ListaPresenca VARCHAR(10),
 	Titulo VARCHAR(100),
 	Descricao TEXT,
 	DataInicio DATE,
@@ -53,9 +53,9 @@ CREATE TABLE MiniCurso(
 );
 
 CREATE TABLE Administra_Ev_MC(
-	CPF_Admin INT,
-	Codigo_Ev INT,
-	Codigo_MC INT,
+	CPF_Admin VARCHAR(11),
+	Codigo_Ev VARCHAR(10),
+	Codigo_MC VARCHAR(10),
 
 	PRIMARY KEY(CPF_Admin, Codigo_Ev, Codigo_MC),
 	FOREIGN KEY(CPF_Admin) REFERENCES Administrador(CPF),
@@ -64,11 +64,11 @@ CREATE TABLE Administra_Ev_MC(
 );
 
 CREATE TABLE Professor(
-	CPF INT,
+	CPF VARCHAR(11),
 	Nome VARCHAR(100),
 	Email VARCHAR(100),
 	Rua VARCHAR(100),
-	Numero INT,
+	Numero VARCHAR(20),
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
@@ -77,16 +77,16 @@ CREATE TABLE Professor(
 );
 
 CREATE TABLE TelefoneProf(
-	CPF_Prof INT,
-	Telefone INT,
+	CPF_Prof VARCHAR(11),
+	Telefone VARCHAR(20),
 
 	PRIMARY KEY(CPF_Prof, Telefone),
 	FOREIGN KEY(CPF_Prof) REFERENCES Professor(CPF)
 );
 
 CREATE TABLE Ministra_MC_Prof(
-	Codigo_MC INT,
-	CPF_Prof INT,
+	Codigo_MC VARCHAR(10),
+	CPF_Prof VARCHAR(11),
 
 	PRIMARY KEY(Codigo_MC, CPF_Prof),
 	FOREIGN KEY(Codigo_MC) REFERENCES MiniCurso(Codigo),
@@ -94,22 +94,22 @@ CREATE TABLE Ministra_MC_Prof(
 );
 
 CREATE TABLE Participante(
-	CPF INT,
-	Codigo_ListaPresenca INT,
+	CPF VARCHAR(11),
+	Codigo_ListaPresenca VARCHAR(10),
 	Nome VARCHAR(100),
-	Telefone INT,
+	Telefone VARCHAR(20),
 	Email VARCHAR(100),
 	Rua VARCHAR(100),
-	Numero INT,
-	 Bairro VARCHAR(100),
-	 Cidade VARCHAR(100),
-	 Estado VARCHAR(100),
+	Numero VARCHAR(20),
+	Bairro VARCHAR(100),
+	Cidade VARCHAR(100),
+	Estado VARCHAR(100),
 
-	 PRIMARY KEY(CPF)
+	PRIMARY KEY(CPF)
 );
 
 CREATE TABLE ListaPresenca(
-	Codigo INT,
+	Codigo VARCHAR(10),
 
 	PRIMARY KEY(Codigo)
 );
@@ -124,9 +124,9 @@ ALTER TABLE Participante
 ADD CONSTRAINT FK_Participante FOREIGN KEY(Codigo_ListaPresenca) REFERENCES ListaPresenca(Codigo);
 
 CREATE TABLE Participa(
-	Codigo_Ev INT,
-	CPF_Participante INT,
-	Codigo_MC INT,
+	Codigo_Ev VARCHAR(10),
+	CPF_Participante VARCHAR(11),
+	Codigo_MC VARCHAR(10),
 
 	PRIMARY KEY(Codigo_Ev, CPF_Participante, Codigo_MC),
 	FOREIGN KEY(Codigo_Ev) REFERENCES Evento(Codigo),
@@ -135,9 +135,9 @@ CREATE TABLE Participa(
 );
 
 CREATE TABLE Certificado(
-	Numero INT,
-	Codigo_MC INT,
-	CPF_Participante INT,
+	Numero VARCHAR(20),
+	Codigo_MC VARCHAR(10),
+	CPF_Participante VARCHAR(11),
 	Nome VARCHAR(100),
 	CargaHoraria TIME,
 

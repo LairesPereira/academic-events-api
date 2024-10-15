@@ -80,6 +80,7 @@ também irá contar com minicursos. Esse projeto será uma API que contará com 
   - Participa(Código_Evento, CPF_Participante, Código_Mini-curso)
   - Certificado(Número, Código_Mini-Curso, CPF_Participante, Nome, Carga-Horária)
 
+Documento contendo o levantamento de requisitos: [Levantamento de requisitos](https://docs.google.com/document/d/1Z4unOrwe4_CRkiPxMaOxHOgyZ-3G50BNHkAdOwTEQYM/edit?usp=sharing)
 
 ## Tecnologias Utilizadas
 

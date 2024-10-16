@@ -14,7 +14,7 @@ CREATE TABLE Administrador(
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
-	Role Varchar(30),
+	Role Varchar(30) NOT NULL,
 
 	PRIMARY KEY(CPF)
 );
@@ -78,7 +78,7 @@ CREATE TABLE Professor(
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
-	Role VARCHAR(30),
+	Role VARCHAR(30) NOT NULL,
 
 	PRIMARY KEY(CPF)
 );
@@ -112,7 +112,7 @@ CREATE TABLE Participante(
 	Bairro VARCHAR(100),
 	Cidade VARCHAR(100),
 	Estado VARCHAR(100),
-	Role VARCHAR(30),
+	Role VARCHAR(30) NOT NULL,
 
 	PRIMARY KEY(CPF),
 	FOREIGN KEY(Codigo_ListaPresenca) REFERENCES ListaPresenca(Codigo)
